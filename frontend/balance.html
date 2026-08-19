@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Balance Inquiry | Banking Management System</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    background:#eef3f9;
+}
+
+/* Navbar */
+
+header{
+    background:#004080;
+    color:white;
+}
+
+.navbar{
+    max-width:1300px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+}
+
+.navbar li{
+    margin-left:25px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color:#FFD700;
+}
+
+/* Main Container */
+
+.container{
+
+    width:700px;
+
+    margin:50px auto;
+
+    background:white;
+
+    border-radius:12px;
+
+    box-shadow:0 8px 20px rgba(0,0,0,.15);
+
+    padding:35px;
+
+}
+
+.container h2{
+
+    text-align:center;
+
+    color:#004080;
+
+    margin-bottom:30px;
+
+}
+
+/* Input */
+
+.form-group{
+
+    margin-bottom:20px;
+
+}
+
+label{
+
+    display:block;
+
+    margin-bottom:8px;
+
+    font-weight:bold;
+
+    color:#333;
+
+}
+
+input{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:6px;
+
+    font-size:16px;
+
+}
+
+input:focus{
+
+    outline:none;
+
+    border-color:#004080;
+
+}
+
+/* Button */
+
+button{
+
+    width:100%;
+
+    padding:14px;
+
+    background:#004080;
+
+    color:white;
+
+    border:none;
+
+    border-radius:6px;
+
+    font-size:17px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+button:hover{
+
+    background:#0066cc;
+
+}
+
+/* Result Card */
+
+.result{
+
+    display:none;
+
+    margin-top:35px;
+
+    border:1px solid #ddd;
+
+    border-radius:10px;
+
+    padding:25px;
+
+    background:#f8fbff;
+
+}
+
+.result h3{
+
+    color:#004080;
+
+    margin-bottom:20px;
+
+    text-align:center;
+
+}
+
+.info{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #ddd;
+
+}
+
+.info:last-child{
+
+    border:none;
+
+}
+
+.info span:first-child{
+
+    font-weight:bold;
+
+    color:#555;
+
+}
+
+.info span:last-child{
+
+    color:#222;
+
+}
+
+.balance{
+
+    color:#2ecc71;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+}
+
+/* Error */
+
+#error{
+
+    margin-top:20px;
+
+    color:red;
+
+    text-align:center;
+
+    font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="navbar">
+
+<div class="logo">
+🏦 Banking_Billing System
+</div>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="createCustomer.html">Create CustomerAccount</a></li>
+
+<li><a href="transactions.html">Transactions</a></li>
+<li><a href="admin/admin_dashboard.html">Admin</a></li>
+
+
+<li><a href="balance.html" class="active">Balance Inquiry</a></li>
+
+<li><a href="history.html">History Inquiry</a></li>
+
+</ul>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<h2>Balance Inquiry</h2>
+
+<div class="form-group">
+
+<label>Account Number</label>
+
+<input
+type="text"
+id="accountNo"
+placeholder="Enter Account Number">
+
+</div>
+
+<button id="checkBalanceBtn">
+
+Check Balance
+
+</button>
+
+<div id="error"></div>
+
+<div class="result" id="balanceCard">
+
+<h3>Account Information</h3>
+
+<div class="info">
+
+<span>Account Number</span>
+
+<span id="accountNumber"></span>
+
+</div>
+
+<div class="info">
+
+<span>Customer Name</span>
+
+<span id="customerName"></span>
+
+</div>
+
+<div class="info">
+
+<span>Account Status</span>
+
+<span id="accountStatus"></span>
+
+</div>
+
+<div class="info">
+
+<span>Current Balance</span>
+
+<span
+id="runningBalance"
+class="balance">
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="balance.js"></script>
+
+</body>
+</html>

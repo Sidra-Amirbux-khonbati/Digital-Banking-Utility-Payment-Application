@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Transaction History</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eef3f9;
+}
+
+header{
+    background:#004080;
+    color:white;
+}
+
+.navbar{
+    max-width:1300px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 30px;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+}
+
+.navbar li{
+    margin-left:25px;
+}
+
+.navbar a{
+    color:white;
+    text-decoration:none;
+    font-size:17px;
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color:#FFD700;
+}
+.container{
+
+width:95%;
+max-width:1200px;
+
+margin:40px auto;
+
+background:white;
+
+padding:30px;
+
+border-radius:10px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.15);
+
+}
+
+h2{
+
+text-align:center;
+
+margin-bottom:30px;
+
+color:#004080;
+
+}
+
+.search-box{
+
+display:flex;
+
+gap:10px;
+
+margin-bottom:25px;
+
+}
+
+.search-box input{
+
+flex:1;
+
+padding:12px;
+
+font-size:16px;
+
+border:1px solid #ccc;
+
+border-radius:6px;
+
+}
+
+.search-box button{
+
+padding:12px 30px;
+
+border:none;
+
+background:#004080;
+
+color:white;
+
+border-radius:6px;
+
+cursor:pointer;
+
+}
+
+.search-box button:hover{
+
+background:#0066cc;
+
+}
+
+table{
+
+width:100%;
+
+border-collapse:collapse;
+
+}
+
+th{
+
+background:#004080;
+
+color:white;
+
+padding:12px;
+
+}
+
+td{
+
+padding:12px;
+
+border-bottom:1px solid #ddd;
+
+text-align:center;
+
+}
+
+.credit{
+
+color:green;
+
+font-weight:bold;
+
+}
+
+.debit{
+
+color:red;
+
+font-weight:bold;
+
+}
+
+.transfer{
+
+color:#004080;
+
+font-weight:bold;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+ <header>
+
+<div class="navbar">
+
+<div class="logo">🏦 Banking_Billing System</div>
+
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="createcustomer.html">Create CustomerAccount</a></li>
+<li><a href="transactions.html">Transactions</a></li>
+<li><a href="admin/admin_dashboard.html">Admin</a></li>
+<li><a href="balance.html">Balance Inquiry</a></li>
+<li><a href="history.html" class="active">History Inquiry</a></li>
+</ul>
+
+</div>
+
+</header>
+
+<div class="container">
+
+<h2>Transaction History</h2>
+
+<div class="search-box">
+
+<input
+type="text"
+id="accountNo"
+placeholder="Enter Account Number">
+
+<button id="searchBtn">
+
+Search
+
+</button>
+
+</div>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>Transaction ID</th>
+
+<th>Date</th>
+
+<th>Type</th>
+
+<th>From</th>
+
+<th>To</th>
+
+<th>Amount</th>
+
+<th>Narration</th>
+
+</tr>
+
+</thead>
+
+<tbody id="historyBody">
+
+</tbody>
+
+</table>
+
+</div>
+
+<script src="history.js"></script>
+
+</body>
+
+</html>

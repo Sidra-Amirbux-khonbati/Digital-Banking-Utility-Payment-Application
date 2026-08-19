@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashboard | Bill Express</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <header>
+
+<div class="navbar">
+
+<div class="logo">🏦 Banking_Billing System</div>
+
+<ul>
+<li><a href="../index.html">Home</a></li>
+<li><a href="../createCustomer.html">Create CustomerAccount</a></li>
+<li><a href="../transactions.html">Transactions</a></li>
+<li><a href="admin_dashboard.html" class="active">Admin</a></li>
+<li><a href="../balance.html">Balance Inquiry</a></li>
+<li><a href="../history.html">History Inquiry</a></li>
+</ul>
+
+</div>
+
+</header>
+
+<div class="container">
+
+    <h1>Admin Dashboard</h1>
+
+    <h2>Pending Company Requests</h2>
+
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Company Name</th>
+                <th>Type</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+
+        <tbody id="companyTable">
+
+        </tbody>
+
+
+    </table>
+
+
+</div>
+
+<div id="successModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2>✅ Company Approved</h2>
+
+        <div id="companyDetails"></div>
+
+        <button onclick="closeModal()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<div id="rejectModal" class="modal">
+
+    <div class="modal-content">
+
+        <h2 style="color:red;">❌ Company Rejected</h2>
+
+        <div id="rejectDetails"></div>
+
+        <button onclick="closeRejectModal()">
+            Close
+        </button>
+
+    </div>
+
+</div>
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

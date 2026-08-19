@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Opening Form</title>
+
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #d8d8d8;
+    font-family: Arial, sans-serif;
+    padding: 30px;
+    font-size: 11px;
+}
+
+.container {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    margin: auto;
+    padding: 6mm;
+    /*border:2px solid black;*/
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    width: 120px;
+}
+
+.title {
+    text-align: center;
+    flex: 1;
+}
+
+.table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+.table td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+fieldset {
+    margin-top: 4px;
+    padding: 4px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 11px;
+}
+
+input[type=text],
+input[type=date] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.table input[type="text"],
+.table input[type="date"] {
+    width: 100%;
+    border: 1px solid #999;
+    padding: 2px;
+    height: 22px;
+    font-size: 11px;
+}
+
+.table td {
+    padding: 8px;
+    vertical-align: top;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    resize: none;
+    border: 1px solid #999;
+    height: 40px;
+}
+
+input[type="email"] {
+    width: 100%;
+    padding: 6px;
+    border: 1px solid #999;
+}
+
+.upload-wrapper {
+    display: flex;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.custom-upload-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #5c6269;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s ease;
+    border: none;
+}
+
+.custom-upload-btn:hover {
+    background-color: #8d9093;
+}
+
+#fileName {
+    margin-left: 12px;
+    font-size: 11px;
+    font-style: italic;
+    color: #444;
+}
+
+#result {
+    margin-top: 8px;
+    font-size: 12px;
+}
+
+button{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #5c6269;
+    color: white;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    transition: background 0.2s ease;
+    border: none;
+
+}
+
+button:hover {
+    background-color: #8d9093;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.5);
+    justify-content:center;
+    align-items:center;
+}
+
+.modal-box{
+    background:#fff;
+    width:420px;
+    padding:30px;
+    border-radius:12px;
+    text-align:center;
+}
+
+.checkmark{
+    width:70px;
+    height:70px;
+    border-radius:50%;
+    background:#28a745;
+    color:white;
+    font-size:40px;
+    line-height:70px;
+    margin:0 auto 20px;
+}
+    </style>
+</head>
+<body>
+<br>
+<div class="container">
+    <div class="title">
+            <h2>Account Opening Form | For Individual</h2>
+        </div>
+    
+    <h2>Upload PDF Form</h2>
+<form id="uploadForm" enctype="multipart/form-data">
+    <div class="upload-wrapper">
+        <label for="formImage" class="custom-upload-btn">Choose & Upload Form</label>
+        <input type="file" id="formImage" name="formImage" accept=".pdf" style="display: none;">
+        <span id="fileName">No file selected</span>
+    </div>
+</form>
+
+<div id="result"></div>
+    <table class="table">
+        <tr>
+            <td>Office / Branch</td>
+            <td><input id="office" type="text"></td>
+
+            <td>Date</td>
+            <td><input id="date" type="text"></td>
+        </tr>
+    </table>
+
+    <fieldset>
+        <legend>Unit Holder Name</legend>
+            <label>Title (Mr, Mrs, Ms)</label>
+                <input id="title" type="text" name="title">
+        <br><br>
+            <label>First Name</label>
+                <input id="firstname" type="text">
+
+            <label>Last Name</label>
+                <input id="lastname" type="text">
+    </fieldset>
+
+    <fieldset>
+        <legend>General Information</legend>
+    <table class="table">
+        <tr>
+            <td>Personal ID Card No.</td>
+            <td><input id="cardno" type="text"></td>
+
+            <td>Nationality</td>
+            <td><input id="nationality" type="text"></td>
+        </tr>
+
+        <tr>
+            <td>Date of Birth</td>
+            <td><input id="dob" type="text"></td>
+
+            <td>Marital Status (Single, Married, Divorced, Widowed)</td>
+            <td>
+                <input id="maritalstatus" type="text" name="maritalstatus">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Age</td>
+            <td>
+                <input id="age" type="text" name="age">
+            </td>
+
+            <td>Name of Guardian</td>
+            <td><input id="guardian" type="text"></td>
+        </tr>
+
+        <tr>
+            <td>Spouse Name</td>
+            <td><input id="spousename" type="text"></td>
+
+            <td>Relationship</td>
+            <td><input id="relationship" type="text"></td>
+        </tr>
+
+        <tr>
+            <td>Working Position</td>
+            <td><input id="position" type="text"></td>
+
+            <td>Office</td>
+            <td><input id="location" type="text"></td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset>
+        <legend>Contact / Mailing Address</legend>
+    <table class="table">
+        <tr>
+            <td>Province</td>
+            <td><input id="province" type="text"></td>
+
+            <td>Postal Code</td>
+            <td><input id="postalcode" type="text"></td>
+        </tr>
+
+        <tr>
+            <td>Home Phone</td>
+            <td><input id="phone" type="text"></td>
+
+            <td>Office Phone</td>
+            <td><input id="officephone" type="text"></td>
+        </tr>
+
+        <tr>
+            <td>Mobile</td>
+            <td><input id="mobile" type="text"></td>
+
+            <td>Email</td>
+            <td><input id="email" type="email"></td>
+        </tr>
+
+        <tr>
+            <td>Fax No.</td>
+            <td><input id="faxno" type="text"></td>
+
+            <td>Address</td>
+            <td><input id="address" type="text"></td>
+        </tr>
+    </table>
+</fieldset>
+
+    <br>
+        <button type="button" id="savebtn">Submit</button>
+</div>
+
+<div id="successModal" class="modal" style="display:none;">
+    <div class="modal-box">
+        <div class="checkmark">✓</div>
+
+        <h2>Customer Created Successfully</h2>
+
+        <div id="customerDetails"></div>
+
+        <button id="goHomeBtn">
+            Go to Home
+        </button>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
