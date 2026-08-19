@@ -527,7 +527,7 @@ This project demonstrates practical experience in:
 
 # 👩‍💻 Project Purpose
 
-The main purpose of FinBridge is to demonstrate how a real-world banking and utility payment workflow can be implemented by integrating a mobile frontend, backend REST APIs, relational database, document processing, email services, QR payments and financial business logic into a single system.
+The main purpose of Finova is to demonstrate how a real-world banking and utility payment workflow can be implemented by integrating a mobile frontend, backend REST APIs, relational database, document processing, email services, QR payments and financial business logic into a single system.
 
 ---
 
